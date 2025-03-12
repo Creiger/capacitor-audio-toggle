@@ -335,7 +335,9 @@ public class AudioTogglePlugin extends Plugin {
                     }
                 }
                 // Your existing code to set communication device
-                boolean result = mAudioManager.setCommunicationDevice(speakerDevice);
+                if (speakerDevice != null) {
+                    boolean result = mAudioManager.setCommunicationDevice(speakerDevice);
+                }
             } else {
                 mAudioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
                 mAudioManager.setSpeakerphoneOn(false);
@@ -360,7 +362,9 @@ public class AudioTogglePlugin extends Plugin {
                         break;
                     }
                 }
-                boolean result = mAudioManager.setCommunicationDevice(speakerDevice);
+                if (speakerDevice != null) {
+                    boolean result = mAudioManager.setCommunicationDevice(speakerDevice);
+                }
             } else {
                 mAudioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
                 mAudioManager.setSpeakerphoneOn(true);
